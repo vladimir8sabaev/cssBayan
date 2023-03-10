@@ -28,6 +28,7 @@ body {
 #accordion li label {
 	padding: 10px;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	font-size: 18px;
@@ -35,34 +36,64 @@ body {
 	cursor: pointer;
 	color: #c20000;
 }
+
+#accordion li label .row {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
 #accordion li label .arrow {
 	font-size: 22px;
 	color: #333;
-	transition: 300ms all;
+	transition: 500ms all;
 }
 #accordion input[type="radio"] {
 	display: none;
 }
-#accordion .content {
+#accordion li label .content {
 	padding: 0 10px;
-	line-height: 26px;
 	max-height: 0;
 	overflow: hidden;
-	transition: max-height 0.5s;
+	transition: 0.7s all;
 }
-
-#accordion input[type="radio"]:checked ~ .content {
-	max-height: 400px;
+#accordion li label .content img {
+	width: 50%;
+	height: 50%;
+	display: block;
+	margin: 0 auto;
+	transition: 0.7s all;
+	transform: rotate(-90deg);
+}
+#accordion input[type="radio"]:checked + label > .content {
+	max-height: 600px;
 }
 
 #accordion input[type="radio"]:checked + label > .arrow {
 	transform: rotate(90deg);
 }
 
-#accordion li:hover > .content {
-	max-height: 400px;
+#accordion input[type="radio"]:checked + label > .row > .arrow {
+	transform: rotate(90deg);
 }
 
-#accordion li:hover > label > .arrow {
+#accordion input[type="radio"]:checked + label > .content > img {
+	transform: rotate(0deg);
+}
+
+#accordion li:hover > label > .content {
+	max-height: 600px;
+}
+
+#accordion
+	li:hover
+	> input[type="radio"]:not(:checked)
+	+ label
+	> .content
+	> img {
+	transform: rotate(0deg);
+}
+
+#accordion li:hover > label > .row > .arrow {
 	transform: rotate(90deg);
 }
