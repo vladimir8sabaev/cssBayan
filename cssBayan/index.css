@@ -49,6 +49,10 @@ body {
 	align-items: center;
 }
 
+#accordion li label .row > .title {
+	transition: 0.7s all;
+}
+
 #accordion li label .arrow {
 	font-size: clamp(1.1rem, 1.5vw + 0.5rem, 2rem);
 	color: #333;
@@ -109,6 +113,9 @@ body {
 
 	#accordion:hover .arrow {
 		opacity: 1;
+	}
+	#accordion:hover .title {
+		color: #000000;
 	}
 }
 
