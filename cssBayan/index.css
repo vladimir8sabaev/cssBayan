@@ -117,12 +117,37 @@ body {
 		opacity: 1;
 	}
 }
-@media (320px <= width < 820px) {
+@media (320px <= width <= 820px) {
 	#accordion {
 		width: 75%;
 	}
 	#accordion li label .content {
 		width: 80%;
+		padding: 0 0.5rem;
+		max-height: 0;
+		overflow: hidden;
+		transition: 0.7s all;
+	}
+}
+
+@media (820px < width <= 1024px) {
+	#accordion {
+		width: 65%;
+	}
+	#accordion li label .content {
+		width: 70%;
+		padding: 0 0.5rem;
+		max-height: 0;
+		overflow: hidden;
+		transition: 0.7s all;
+	}
+}
+@media (width > 1024px) {
+	#accordion {
+		width: 50%;
+	}
+	#accordion li label .content {
+		width: 60%;
 		padding: 0 0.5rem;
 		max-height: 0;
 		overflow: hidden;
