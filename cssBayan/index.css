@@ -33,6 +33,7 @@ body {
 	cursor: pointer;
 	max-height: 80vh;
 	transition: 0.2s opacity;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 #accordion li label {
 	width: 100%;
