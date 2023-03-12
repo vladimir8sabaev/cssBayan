@@ -7,10 +7,13 @@
 body {
 	background: #505050;
 }
+::-webkit-scrollbar {
+	display: none;
+}
 .wrapper {
 	padding-top: 1rem;
 	display: flex;
-	align-items: center;
+	align-items: start;
 	justify-content: center;
 	min-height: 100vh;
 	max-width: 100vw;
@@ -28,9 +31,11 @@ body {
 	border-radius: 1rem;
 	cursor: pointer;
 	max-height: 80vh;
+	transition: 0.2s opacity;
 }
 #accordion li label {
 	width: 100%;
+	height: 100%;
 	padding-bottom: 1rem;
 	display: flex;
 	flex-direction: column;
@@ -60,6 +65,8 @@ body {
 	opacity: 0;
 }
 #accordion input[type="radio"] {
+	width: 0px;
+	height: 0px;
 	visibility: hidden;
 }
 #accordion li label .content {
@@ -79,6 +86,10 @@ body {
 }
 #accordion input[type="radio"]:checked + label > .content {
 	max-height: 50vh;
+}
+
+#accordion > li:active {
+	opacity: 0.3;
 }
 
 #accordion input[type="radio"]:checked + label > .arrow {
@@ -124,7 +135,20 @@ body {
 		opacity: 1;
 	}
 }
-@media (320px <= width <= 820px) {
+
+@media (320px <= width <= 425px) {
+	#accordion {
+		width: 90%;
+	}
+	#accordion li label .content {
+		width: 80%;
+		padding: 0 0.5rem;
+		max-height: 0;
+		overflow: hidden;
+		transition: 0.7s all;
+	}
+}
+@media (425px < width <= 820px) {
 	#accordion {
 		width: 75%;
 	}
