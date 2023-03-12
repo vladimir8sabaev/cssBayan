@@ -65,8 +65,6 @@ body {
 	opacity: 0;
 }
 #accordion input[type="radio"] {
-	width: 0px;
-	height: 0px;
 	visibility: hidden;
 }
 #accordion li label .content {
